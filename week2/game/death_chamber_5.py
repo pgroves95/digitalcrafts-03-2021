@@ -1,6 +1,7 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
+from death_art import *
 
 
 class Weapon(object):
@@ -168,10 +169,11 @@ class Room(object):
 
     def update(self, enemy_lvl):
         if enemy_lvl == -1:
-            print("\nYou lost buddy. Enjoy your eternity in hell!")
+            print(f"\n{hell}\nYou lost buddy. Enjoy your eternity in hell!")
             exit(0)
         elif enemy_lvl == 4:
-            print("\nYou killed satan! Angels are singing your praises.")
+            print(
+                f"\n{unicorn}\nYou killed satan! Angels are singing your praises.")
             exit(0)
         else:
             enemy_lvl += 1
@@ -180,10 +182,10 @@ class Room(object):
             self.combat_sequence(next_enemy)
 
     def combat_sequence(self, enemy):
-        intro_list = ['Goblins are the scum of the earth', '\nYou killed the goblin.\n\n   Here\'s a witch. Dont get hexed',
-                      '\nDing, Dong the witch is dead.\n\n   Here\'s a werewolf. Werewolf Schmerwolf. Although he is kind of big...',
-                      '\nDone with wolfy... Holy smokes!\n\n  They say this demoness is Satan\'s daughter. My bowels are quivering...',
-                      '\nWell, she\'s goblin scraps now.\n\n   Here he is, you\'re old college roommate, Prince of Darkness.\n   Still a total slob...']
+        intro_list = [f'{goblin}\nGoblins are the scum of the earth', f'\n{witch}\nYou killed the goblin.\n\n   Here\'s a witch. Dont get hexed',
+                      f'\n{werewolf}\nDing, Dong the witch is dead.\n\n   Here\'s a werewolf. Werewolf Schmerwolf. Although he is kind of big...',
+                      f'\n{demoness}\nDone with wolfy... Holy smokes!\n\n  They say this demoness is Satan\'s daughter. My bowels are quivering...',
+                      f'\n{satan}\nWell, she\'s goblin scraps now.\n\n   Here he is, you\'re old college roommate, Prince of Darkness.\n   Still a total slob...']
         print(intro_list[enemy.level]+'\n')
         player.weapon = Weapon().player_weapon()
         while player.health > 0 and enemy.health > 0:
@@ -203,30 +205,9 @@ class Room(object):
         self.update(enemy.level)
 
 
-print("""
+print(f"""
              DEATH CHAMBER FIVE
-
-___________________6666666___________________ 
-____________66666__________66666_____________ 
-_________6666___________________666__________ 
-_______666__6____________________6_666_______ 
-_____666_____66_______________666____66______ 
-____66_______66666_________66666______666____ 
-___66_________6___66_____66___66_______666___ 
-__66__________66____6666_____66_________666__ 
-_666___________66__666_66___66___________66__ 
-_66____________6666_______6666___________666_ 
-_66___________6666_________6666__________666_ 
-_66________666_________________666_______666_ 
-_66_____666______66_______66______666____666_ 
-_666__666666666666666666666666666666666__66__ 
-__66_______________6____66______________666__ 
-___66______________66___66_____________666___ 
-____66______________6__66_____________666____ 
-_______666___________666___________666_______ 
-_________6666_________6_________666__________ 
-____________66666_____6____66666_____________ 
- __________________6666666__________________
+{pentagram}
     (a p0wn or get p0wned action thriller)
 """)
 
