@@ -174,7 +174,6 @@ class Room(object):
             print("\nYou killed satan! Angels are singing your praises.")
             exit(0)
         else:
-            print(f"Chamber {enemy_lvl + 1}...")
             enemy_lvl += 1
             player.health += self.has_food()
             next_enemy = Enemy(enemy_lvl)
@@ -188,7 +187,10 @@ class Room(object):
         print(intro_list[enemy.level]+'\n')
         player.weapon = Weapon().player_weapon()
         while player.health > 0 and enemy.health > 0:
-            print("===========================================================")
+            print(f"""
+            ===========================================================
+            ========================= Chamber {enemy.level + 1} =======================
+            ===========================================================""")
             player.combat_display()
             enemy.combat_display()
             player_move = player.combat_choice()
