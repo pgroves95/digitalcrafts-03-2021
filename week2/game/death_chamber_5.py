@@ -1,7 +1,6 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
-import death_art
 
 
 class Weapon(object):
