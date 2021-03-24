@@ -1,0 +1,14 @@
+.pic1 {
+  position: relative;
+  left: 100px;
+}
+
+.pic2 {
+  position: absolute;
+  bottom: 100px;
+}
+
+.pic1-5 {
+  position: fixed;
+  left: 300px;
+}
