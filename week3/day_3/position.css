@@ -1,6 +1,30 @@
+#head {
+  position: fixed;
+  top: 0px;
+  height: 40px;
+  width: 100vw;
+  background-color: aqua;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  font-size: 20px;
+}
+
+.headtext {
+  position: fixed;
+  top: -25px;
+  padding-left: 20px;
+}
+
 .pic1 {
   position: relative;
   left: 100px;
+  top: 100px;
+}
+#on-img {
+  position: absolute;
+  left: 150px;
+  color: #b0f;
 }
 
 .pic2 {

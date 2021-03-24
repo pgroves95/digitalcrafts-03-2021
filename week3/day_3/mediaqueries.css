@@ -1,0 +1,30 @@
+#head {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: goldenrod;
+}
+
+.navbar a {
+  display: block;
+  font-size: 1.3em;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  color: blue;
+  float: left;
+}
+
+@media screen and (max-width: 650px) {
+  .navbar a {
+    font-size: 1em;
+    float: none;
+    width: 100%;
+  }
+}
