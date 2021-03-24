@@ -1,0 +1,19 @@
+img {
+  height: 200px;
+  width: 90px;
+  padding: 3% 2%;
+}
+
+.flexy {
+  display: flex;
+}
+
+.flex-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap-justify {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
