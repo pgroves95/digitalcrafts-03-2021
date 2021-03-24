@@ -1,4 +1,37 @@
-h1 {
-  font-size: 60px;
-  color: #378;
+body {
+  background-color: #fff;
+}
+
+#header {
+  display: flex
+  height: 2.5em;
+  width: 94vw
+}
+#gbox {
+  margin-top: 20vh;
+}
+
+#logo {
+  width: 30vw;
+}
+
+#bar {
+  width: 40vw;
+}
+
+.hleft {
+  text-align: left;
+  margin-right: 1em;
+}
+
+.buttons {
+  margin: 6px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-weight: bold;
 }
