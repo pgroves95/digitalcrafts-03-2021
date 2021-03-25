@@ -1,0 +1,41 @@
+body {
+  height: 100vh;
+  background-color: sandybrown;
+  display: grid;
+  grid-template-rows: 1fr 2fr 8fr 1fr;
+  grid-template-columns: 1fr 5fr 0.6fr;
+  grid-template-areas:
+    "sidebar nav nav"
+    "sidebar main adbox"
+    "sidebar main adbox"
+    "sidebar footer footer";
+  grid-gap: 0.3rem;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background-color: salmon;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: sienna;
+}
+
+main {
+  grid-area: main;
+  background-color: slategray;
+}
+
+#adbox {
+  grid-area: adbox;
+  font-size: 0.04rem;
+  text-align: center;
+  background-color: springgreen;
+}
+
+footer {
+  grid-area: footer;
+  background-color: salmon;
+}

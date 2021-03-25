@@ -1,0 +1,53 @@
+body {
+  font-family: "Bebas Neue", cursive;
+  background-color: olivedrab;
+  text-align: center;
+  font-size: 3rem;
+}
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.4fr 1fr 1fr 1fr;
+  grid-template-rows: 0.33fr 0.7fr 1fr 0.25fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+  grid-gap: 0.3rem;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #18a558;
+}
+
+main {
+  grid-area: main;
+  background-color: #a3ebb1;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #18a558;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #21b6a8;
+}
+
+#content-div-1 {
+  grid-area: content1;
+  background-color: #116530;
+}
+
+#content-div-2 {
+  grid-area: content2;
+  background-color: #116530;
+}
+
+#content-div-3 {
+  grid-area: content3;
+  background-color: #116530;
+}
