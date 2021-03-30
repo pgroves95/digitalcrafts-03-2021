@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcpage.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Basic Calculator in Browser</title>
+</head>
+<body>
+    <div id="nav">
+        <h1 id="main-header">Basic Calculator</h1>
+    </div>
+    <div id="container">
+        <p id="description">Type in two numbers and choose an operation below. Click the 
+            calculate button to see the result.
+        </p>
+        <form id="form" action="">
+            <label for="dropdown">Operation</label><br>
+            <select name="dropdown" id="dropdown">
+                <option value='add'>Add</option>
+                <option value='subtract'>Subtract</option>
+                <option value='multiply'>Multiply</option>
+                <option value='divide'>Divide</option>
+            </select><br>
+            <label for="num1">First Number</label>
+            <input name="num1" id="num1" type="text">
+            <label for="num2">Second Number</label>
+            <input name="num2" id="num2" type="text">
+            <button id="calc" type="submit">CALCULATE</button>
+        </form>
+        <script src="calcmain.js"></script>
+    </div>
+</body>
+</html>

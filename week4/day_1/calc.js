@@ -11,3 +11,7 @@ function calc(num1, num2, operator) {
         return "invalid operator"
     }
 }   
+calcData = document.getElementById("calc")
+function log() {
+    console.log(calcData)
+}
