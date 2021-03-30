@@ -1,0 +1,75 @@
+#top {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  padding-top: 10px;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 2rem;
+  background-color: rgb(100, 200, 150);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  color: royalblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#form-div {
+  grid-area: form;
+}
+
+input {
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+
+label {
+  color: darkblue;
+  background-color: darkgoldenrod;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+}
+
+button {
+  font-size: 1.6rem;
+  color: skyblue;
+  background-color: saddlebrown;
+  padding: 0.7rem;
+}
+
+#root {
+  margin: 0px;
+  width: 100%;
+  background-color: seagreen;
+}
+
+#result {
+  padding: 2rem;
+  text-align: center;
+  grid-area: result;
+}
+#tip-log {
+  grid-area: log;
+  padding: 0.3rem 1rem;
+  color: rgb(234, 235, 240);
+  background-color: #6aa;
+}
+#display-result {
+  width: max-content;
+  padding: 0.5rem;
+  background-color: darkolivegreen;
+}
+#main {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 1fr, 3fr, 2fr;
+  grid-template-rows: 1fr, 2fr, 2fr;
+  grid-template-areas:
+    ". . ."
+    ". form log"
+    ". result log";
+}
