@@ -1,0 +1,35 @@
+body {
+}
+
+#top {
+  grid-area: top;
+}
+
+#new-task-div {
+  grid-area: enter;
+}
+
+#to-do-div {
+  grid-area: todo;
+}
+
+#completed-div {
+  grid-area: done;
+}
+
+#container {
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: darkcyan;
+  border: 20px solid #55f;
+  overflow: visible;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 2fr, 6fr;
+  grid-template-areas:
+    "top top top"
+    ". enter ."
+    "todo . done";
+}

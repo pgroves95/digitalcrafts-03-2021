@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Task Tracker</title>
+</head>
+<body>
+    <div id="container">
+        <div id="top">
+                <h1>Task Tracker</h1>
+            <p>
+                Here, you can add tasks to your "to-do list" with a priority
+                of high, medium, or low. You can also mark tasks complete
+                as you finish them, which will move them to your "completed list".
+            </p>
+        </div>
+        <div id="new-task-div">
+            <label for="task-name">Task Name</label>
+            <input name="task-name" type="text"><br>
+            <ul>
+            <label for="high-p">High Priority</label>
+            <input name="pri" type="radio" value="high"><br>
+            <label for="med-p">Medium Priority</label>
+            <input name="pri" type="radio" value="med"><br>
+            <label for="low-p">Low Priority</label>
+            <input name="pri" type="radio" value="low"><br>
+            </ul>
+        </div>
+        <div id="to-do-div">
+            <h3>To-Do List</h3>
+            <ul id="to-do-list"></ul>
+        </div>
+        <div id="completed-div">
+            <h3>Completed List</h3>
+            <ul id="completed-list"></ul>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
