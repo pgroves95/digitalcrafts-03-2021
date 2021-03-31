@@ -5,6 +5,9 @@ const tipList = document.querySelector('#tip-list')
 
 
 function tipCalc(tot,per) { 
+    if(isNaN(Number(tot)) || isNaN(Number(per))){
+        return "invalid entry"
+    }
     const nTot = Number(tot)
     const nPer = Number(per)/100
     preTip = nTot * nPer * 100

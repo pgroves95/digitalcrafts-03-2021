@@ -7,6 +7,7 @@
   width: 100%;
   margin-bottom: 2rem;
   background-color: rgb(100, 200, 150);
+  border-bottom: 5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +15,21 @@
 
 #title {
   color: royalblue;
+  background-color: lightgray;
+  padding: 3px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  border: 3px solid burlywood;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #form-div {
   grid-area: form;
+  display: grid;
+  height: 40vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
@@ -29,13 +40,13 @@ input {
 label {
   color: darkblue;
   background-color: darkgoldenrod;
-  padding: 0.3rem;
+  padding: 0.1rem;
   font-size: 1.3rem;
 }
 
 button {
   font-size: 1.6rem;
-  color: skyblue;
+  color: whitesmoke;
   background-color: saddlebrown;
   padding: 0.7rem;
 }
@@ -47,13 +58,18 @@ button {
 }
 
 #result {
-  padding: 2rem;
+  padding: 0.5rem;
+  display: grid;
+  height: 30vh;
   text-align: center;
   grid-area: result;
+  justify-content: center;
+  align-content: center;
 }
 #tip-log {
   grid-area: log;
-  padding: 0.3rem 1rem;
+  padding: 5rem 1rem;
+  border-left: 5px solid black;
   color: rgb(234, 235, 240);
   background-color: #6aa;
 }
@@ -62,14 +78,18 @@ button {
   padding: 0.5rem;
   background-color: darkolivegreen;
 }
+#topspace {
+  height: 20vh;
+  grid-area: top;
+}
 #main {
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: 1fr, 3fr, 2fr;
-  grid-template-rows: 1fr, 2fr, 2fr;
+  grid-template-columns: 1fr, 5fr, 1fr;
+  grid-template-rows: 1fr, 6fr, 1fr;
   grid-template-areas:
-    ". . ."
+    "top top log"
     ". form log"
     ". result log";
 }
