@@ -19,19 +19,21 @@
         </div>
         <div id="new-task-div">
             <label for="task-name">Task Name</label>
-            <input name="task-name" type="text"><br>
+            <input id="task-name" name="task-name" type="text"><br>
             <ul>
             <label for="high-p">High Priority</label>
-            <input name="pri" type="radio" value="high"><br>
+            <input class="rad" name="pri" type="radio" value="high"><br>
             <label for="med-p">Medium Priority</label>
-            <input name="pri" type="radio" value="med"><br>
+            <input class="rad" name="pri" type="radio" value="med"><br>
             <label for="low-p">Low Priority</label>
-            <input name="pri" type="radio" value="low"><br>
+            <input class="rad" name="pri" type="radio" value="low"><br>
+            <button id="add-btn">Add New Task</button>
             </ul>
         </div>
         <div id="to-do-div">
             <h3>To-Do List</h3>
             <ul id="to-do-list"></ul>
+            <button id="done-btn">Mark Task(s) as Complete</button>
         </div>
         <div id="completed-div">
             <h3>Completed List</h3>

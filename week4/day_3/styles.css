@@ -1,32 +1,51 @@
 body {
+  margin: 0;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #top {
   grid-area: top;
+  width: 50vw;
+  align-self: center;
 }
 
 #new-task-div {
   grid-area: enter;
+  align-self: center;
+}
+
+#add-btn {
+  font-size: 1.3rem;
+  margin-top: 0.4rem;
 }
 
 #to-do-div {
   grid-area: todo;
+  height: 30vh;
+  text-align: center;
+}
+
+#done-btn {
+  font-size: 1rem;
 }
 
 #completed-div {
   grid-area: done;
+  height: 30vh;
+  text-align: center;
 }
 
 #container {
   margin: 0px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: darkcyan;
   border: 20px solid #55f;
   overflow: visible;
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-columns: 2fr, 1fr, 2fr;
   grid-template-rows: 1fr, 2fr, 6fr;
   grid-template-areas:
     "top top top"
