@@ -3,14 +3,16 @@ const inputPercent = document.querySelector("#percent")
 const result = document.querySelector("#display-result")
 const tipList = document.querySelector('#tip-list')
 
-function numberWithCommas(x) {
+function numCommas(x) {
     let parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
 
+
+
 function tipCalc(tot,per) { 
-    if(isNaN(Number(tot)) || isNaN(Number(per))){
+    if(!numMatch(tot) || !numMatch(per)){
         return "invalid entry"
     }
     const nTot = Number(tot)
@@ -22,9 +24,14 @@ function tipCalc(tot,per) {
     newLi = document.createElement("li")
     newLi.innerText = finalTip.toFixed(2) + ", total: " + finalTot.toFixed(2)
     tipList.append(newLi)
-    return `With a $${finalTip.toFixed(2)} tip, your new total is $${numberWithCommas(finalTot.toFixed(2))}.`
+    return `With a $${numCommas(finalTip.toFixed(2))} tip, your new total is $${numCommas(finalTot.toFixed(2))}.`
 };
-    
+
+function numMatch(num) {
+    const regNum = /^(\d+)?([.]?\d{0,2})?$/
+    return regNum.test(num)
+}
+
 
 function update(){
     result.innerText = tipCalc(inputSubtotal.value, inputPercent.value)

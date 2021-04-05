@@ -24,16 +24,23 @@ function addTask(){
 addBtn.addEventListener("click", function(){
     const newTask = addTask()
     const todoLi = document.createElement("li")
-    const checked = document.createElement("input")
-    checked.type = "checkbox"
-    checked.name = "check"
+    const checky = document.createElement("input")
+    checky.type = "checkbox"
+    checky.class = "check"
     todoLi.innerText = `${newTask.name} (${newTask.priority})`
-    todoLi.appendChild(checked)
+    todoLi.appendChild(checky)
     todoList.append(todoLi)
 })
 
 function finishTask(){
-
+    const todoLiArray = todoList.childNodes
+    for(li of todoLiArray){
+        if(li.childNodes.checked === true){
+            doneTask = li
+            todoList.li.remove()
+            completedList.append(doneTask)
+        }
+    }
 }    
 
 doneBtn.addEventListener("click", function(){
