@@ -1,3 +1,5 @@
+import apiKey from api.js
+
 function kelvToFahr(temp){
     return (temp - 273.15) * 9/5 + 32
 }
@@ -34,7 +36,7 @@ li3 = document.getElementById("li3")
 li4 = document.getElementById("li4")
 
 const currentWeatherByZip = async (zip) => {
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=d946b612e4ee79378f94e752c60aacba`);
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}`);
     usableData = await data.json()
     console.log(usableData)
     li0.innerText = `Location: ${usableData.name}`
