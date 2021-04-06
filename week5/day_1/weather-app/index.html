@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tailwind.css">
     <title>Weather Now</title>
 </head>
-<body>
-    <div id="top"><h1>Your Weather Now</h1></div>
-    <div id="main">
-        <label class="m" for="zip-input">Please enter your 5-digit zip code</label><br>
-        <input class="m" type="text" name="zip-input" id="zip-input">
-        <button class="m" id="zip-get">search</button>
-        <ul>
-            <li class="m" id="li0"></li>
-            <li class="m" id="li1"></li>
-            <li class="m" id="li2"></li>
-            <li class="m" id="li3"></li>
-            <li class="m" id="li4"></li>
-        </ul>
+<body class=>
+    <div class="bg-blue-500 border-8 text-8xl text-opacity-70 text-green-900 font-serif flex-row text-center shadow-inner p-12" id="top"><h1>Your Weather Now</h1></div>
+    <div class="min-h-screen w-full bg-gray-400 font-mono grid place-content-center" id="main">
+        <div class="h-25 w-100 bg-indigo-300 rounded-2xl border-2 border-blue-800 p-3 text-3xl space-x-2 space-y-2">
+            <label class="text-blue-700" for="zip-input">Please enter your 5-digit zip code</label><br>
+            <input class="" type="text" name="zip-input" id="zip-input">
+            <button class="bg-blue-400 text-opacity-70 border-blue-700 border-4" id="zip-get">search</button>
+            <div class="h-60">
+            <ul>
+                <li class="m" id="li0"></li>
+                <li class="m" id="li1"></li>
+                <li class="m" id="li2"></li>
+                <li class="m" id="li3"></li>
+                <li class="m" id="li4"></li>
+            </ul>
+            </div>
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
