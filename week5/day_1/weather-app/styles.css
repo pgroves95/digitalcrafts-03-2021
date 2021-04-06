@@ -1,0 +1,46 @@
+body {
+  margin: 0px;
+  background-color: #4b6;
+}
+
+#top {
+  position: fixed;
+  top: 0px;
+  margin: 0px;
+  height: 10rem;
+  width: 100%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  background-color: #3df;
+  color: peru;
+  text-align: center;
+}
+
+#main {
+  margin-top: 7rem;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.m {
+  margin: 0.4rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+::marker {
+  color: rgba(0, 0, 0, 0%);
+}
+
+#zip-get {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  background-color: sienna;
+  color: aliceblue;
+  border-radius: 5px;
+  width: 8rem;
+}

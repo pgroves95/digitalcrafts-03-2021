@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Boulder Weather Now</title>
+    <title>Weather Now</title>
 </head>
 <body>
-    <div id="top"><h1>Boulder Weather Now</h1></div>
+    <div id="top"><h1>Your Weather Now</h1></div>
     <div id="main">
-        <h2>Here's what's happening</h2>
+        <label class="m" for="zip-input">Please enter your 5-digit zip code</label><br>
+        <input class="m" type="text" name="zip-input" id="zip-input">
+        <button class="m" id="zip-get">search</button>
         <ul>
-            <li id="li1"></li>
-            <li id="li2"></li>
-            <li id="li3"></li>
-            <li id="li4"></li>
+            <li class="m" id="li0"></li>
+            <li class="m" id="li1"></li>
+            <li class="m" id="li2"></li>
+            <li class="m" id="li3"></li>
+            <li class="m" id="li4"></li>
         </ul>
     </div>
 </body>
