@@ -3,7 +3,8 @@ card.hidden = true;
 const btnDiv = document.querySelector(".btn-div")
 const clearBtn = document.createElement("button")
 clearBtn.id = "clear-btn"
-clearBtn.innerText = "Clear Cards" 
+clearBtn.innerText = "Clear Cards"
+clearBtn.hidden = true;
 const body = document.querySelector("body")
 const randColor = () => Math.floor(Math.random()*16777215).toString(16)
 
@@ -40,6 +41,7 @@ const btn1 = document.querySelector("#btn1")
 
 btn1.addEventListener("click", () => {
     btn1.hidden = true
+    if(btn2.hidden){clearBtn.hidden = false}
     displayFakePeople()
     btnDiv.appendChild(clearBtn)
 })
@@ -48,6 +50,7 @@ const btn2 = document.querySelector("#btn2")
 
 btn2.addEventListener("click", () => {
     btn2.hidden = true
+    if(btn1.hidden){clearBtn.hidden = false}
     displayFakePhrases()
 })
 
