@@ -1,7 +1,10 @@
 card = document.querySelector(".card-container")
 card.hidden = true;
-body = document.querySelector("body")
-console.log(card.children)
+const btnDiv = document.querySelector(".btn-div")
+const clearBtn = document.createElement("button")
+clearBtn.id = "clear-btn"
+clearBtn.innerText = "Clear Cards" 
+const body = document.querySelector("body")
 const randColor = () => Math.floor(Math.random()*16777215).toString(16)
 
 const displayFakePeople = async () => {
@@ -17,8 +20,8 @@ const displayFakePeople = async () => {
 
     card.className = "off"
     const deck = document.getElementsByClassName("card-container")
-    for(card of deck){
-        card.hidden = false;
+    for(crd of deck){
+        crd.hidden = false;
     }
 }
 
@@ -38,6 +41,7 @@ const btn1 = document.querySelector("#btn1")
 btn1.addEventListener("click", () => {
     btn1.hidden = true
     displayFakePeople()
+    btnDiv.appendChild(clearBtn)
 })
 
 const btn2 = document.querySelector("#btn2")
@@ -46,3 +50,10 @@ btn2.addEventListener("click", () => {
     btn2.hidden = true
     displayFakePhrases()
 })
+
+clearBtn.addEventListener("click", () =>{
+    clearBtn.hidden = true;
+    const deck = document.getElementsByClassName("card-container")
+    for(crd of deck){
+        crd.hidden = true;
+}})
