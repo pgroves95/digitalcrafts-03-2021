@@ -11,6 +11,7 @@ const randColor = () => Math.floor(Math.random()*16777215).toString(16)
 const displayFakePeople = async () => {
     let getCC = await fetch("https://fakerapi.it/api/v1/credit_cards?_quantity=30&_locale=en_US")
     let ccData = await getCC.json()
+
     for(cc of ccData.data){
         const color = randColor()
         const newCard = card.cloneNode(true)
