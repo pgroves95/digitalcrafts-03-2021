@@ -16,7 +16,12 @@ app.get('/', (req,res) => {
 })
 
 app.get('/b', (req,res) => {
-    res.end("Hello from b")
+    readFile('./b.html', 'utf-8', (err,data) => {
+        if(err){
+            res.send("doesn't exist")
+        }
+        res.send(data)
+    })
 })
 
 app.listen(PORT, address, () => {
