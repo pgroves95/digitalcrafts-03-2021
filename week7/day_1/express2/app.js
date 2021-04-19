@@ -3,6 +3,8 @@ const app = express()
 const PORT = 3000
 const { readFile } = require("fs")
 
+app.use(express.json())
+
 
 app.get('/', (req,res) => {
     res.send("Welcome to my page.")
@@ -36,6 +38,13 @@ app.get("*", (req, res) => {
     readFile("./html/unfound.html", "utf-8", (err, data) => {
         res.send(data)
     })
+})
+
+app.post("/messages", (req,res) => {
+    console.log(req)
+    const {logo, name} = req.body
+    res.send({logo,name})
+
 })
 
 
