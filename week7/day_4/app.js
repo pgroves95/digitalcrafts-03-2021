@@ -81,7 +81,28 @@ app.post('/find_product', async (req,res) => {
 })
 
 //update a product quantity
-// app.get('/update_product')
+app.get('/update_product', (req,res) => {
+    res.render('update_product')
+})
+
+app.post('/update_product', async (req,res) => {
+
+    try{
+        const { id } = req.body
+        const { quantity } = req.body
+
+        await db.none('UPDATE demo SET quantity = $1 WHERE id = $2',[quantity, id])
+        .then(() => {
+                res.render('update_product',{message: `The specified product was updated with new quantity: ${quantity}`})
+            })
+        .catch((err) => {
+            console.log(err)
+            res.render('update_product', {message:"The specified product does not exist."})
+        })
+    } catch(err) {
+        console.log(err)
+    }
+})
 
 //delete a product
 app.get('/delete_product', (req,res) => {

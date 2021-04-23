@@ -21,6 +21,7 @@ const findX = (equation) => {
             sideKnown = side
         }
     } if(isNaN(sideKnown)){
+    
         operator = ''
         for(char of sideKnown){
             if(isNaN(char)) {operator = char}

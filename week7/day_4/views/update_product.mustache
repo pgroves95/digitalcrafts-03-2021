@@ -7,15 +7,13 @@
     <title>Modify Product Information</title>
 </head>
 <body>
-    <h1>Modify Product Information (based on Product ID)</h1>
-    <form action="/create_product" method="POST">
-        <label for="name">Product ID</label>
-        <input type="text" name="prodName">
-        <label for="name">Modify Product Name</label>
-        <input type="text" name="prodName">
+    <h1>Modify Product Data (based on Product ID)</h1>
+    <form action="/update_product" method="POST">
+        <label for="name">Provide Product ID</label>
+        <input type="text" name="id">
         <label for="quantity">Modify Quantity</label>
         <input type="number" name="quantity">
-        <button type="submit">Modify Product</button>
+        <button type="submit">Submit</button>
     </form>
     
     {{#message}}
