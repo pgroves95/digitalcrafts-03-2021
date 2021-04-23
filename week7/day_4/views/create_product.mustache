@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Product</title>
+</head>
+<body>
+    <h1>Create New Product</h1>
+    <form action="/create_product" method="POST">
+        <label for="name">Product Name</label>
+        <input type="text" name="prodName">
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity">
+        <button type="submit">Add Product to Database</button>
+    </form>
+    
+    {{#message}}
+    <div>
+    <h3>{{message}}</h3>
+    </div>
+    {{/message}}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+</head>
+<body>
+    <h1>Delete Product</h1>
+    <form action="/delete_product" method="POST">
+        <label for="name">Name of Product to Delete</label>
+        <input type="text" name="prodName">
+        <button type="submit">Delete Product From Database</button>
+    </form>
+    
+    {{#message}}
+    <div>
+    <h3>{{message}}</h3>
+    </div>
+    {{/message}}
+    
+</body>
+</html>
