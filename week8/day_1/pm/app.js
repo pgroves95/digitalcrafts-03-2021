@@ -1,7 +1,15 @@
+//server
 const express = require('express')
 const app = express()
 const cors = require('cors')
 const mustacheExpress = require('mustache-express')
+const path = require('path')
+
+//sass
+// const sass = require('sass')
+// const sassSync = sass.renderSync({file: 'styles.scss'})
+
+//db
 const pgp = require('pg-promise')()
 const PORT = 3000
 const CONN_STRING = 'groves://localhost:5432/wk8d1'
@@ -11,8 +19,11 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-app.engine('mustache', mustacheExpress('/partials'))
-app.set('views', '/views')
+const VIEWS_PATH = path.join(__dirname, '/views')
+
+// configuring view engine
+app.engine('mustache',mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
+app.set('views',VIEWS_PATH)
 app.set('view engine','mustache')
 
 //create
