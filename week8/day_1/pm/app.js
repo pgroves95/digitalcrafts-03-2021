@@ -26,9 +26,24 @@ app.engine('mustache',mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 app.set('views',VIEWS_PATH)
 app.set('view engine','mustache')
 
+//json/urlencoded
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 //create
 app.get('/create-todo',(req,res) => {
     res.render('create-todo')
+})
+
+app.post('/create-todo', (req,res) => {
+    console.log(req.body)
+    const { taskname } = req.body
+    try {
+        db.none('INSERT INTO todo (taskname,completed) VALUES($1,$2)', [taskname, 'false'])
+        res.render('/read-todos')
+    } catch(err) {
+        console.log(err)
+    }
 })
 //read
 app.get('/read-todos',(req,res) => {
