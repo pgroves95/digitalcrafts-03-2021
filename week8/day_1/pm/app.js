@@ -40,7 +40,7 @@ app.post('/create-todo', (req,res) => {
     const { taskname } = req.body
     try {
         db.none('INSERT INTO todo (taskname,completed) VALUES($1,$2)', [taskname, 'false'])
-        res.render('/read-todos')
+        res.render('read-todos')
     } catch(err) {
         console.log(err)
     }
