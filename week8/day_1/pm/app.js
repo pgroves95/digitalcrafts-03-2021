@@ -30,6 +30,16 @@ app.set('view engine','mustache')
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
+//psql dynamic list interpolate function
+// const pgListInterpolater = (list) =>{
+//     let pgString = ''
+//     for(i=1; i<list.length; i++){
+//         pgString += `$${i},`
+//     }
+//     noTrail = pgString.slice(0,(pgString.length-1))
+//     return noTrail
+// }
+
 //create
 app.get('/create-todo',(req,res) => {
     res.render('create-todo')
@@ -85,11 +95,48 @@ app.get('/update-todos',(req,res) => {
         console.log(err)
     }
     })
+
+app.post('/update-todos', (req,res) => {
+    const { task } = req.body
+    console.log(task)
+    try{
+        db.any('SELECT * FROM todo')
+        .then((data) =>{
+            console.log(data)
+            res.render('update-todos')
+        })
+    } catch(err) {
+        console.log(err)
+    }
+})
 //delete
 app.get('/delete-todos',(req,res) => {
-    res.render('delete-todos')
+    try {
+        db.any('SELECT taskname, completed FROM todo')
+        .then((data) => {
+            let incompleteArray = []
+            let completedArray = []
+
+            for(task of data) {
+                if(task.completed === false) {
+                    incompleteArray.push(task.taskname)
+                } else {
+                    completedArray.push(task.taskname)
+                }
+            }
+            console.log(incompleteArray)
+            console.log(completedArray)
+            res.render('read-todos', {incomplete: incompleteArray, complete: completedArray})
+        })
+    } catch(err) {
+        console.log(err)
+    }
+
 })
 
+app.post('/delete-todos', (req,res) => {
+
+})
 
 app.listen(PORT, (req,res) => {
     console.log(`server running on port ${PORT}`)
