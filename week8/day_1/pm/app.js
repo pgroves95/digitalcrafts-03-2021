@@ -70,8 +70,21 @@ app.get('/read-todos',(req,res) => {
 })
 //update
 app.get('/update-todos',(req,res) => {
-    res.render('update-todos')
-})
+    try {
+        db.any('SELECT taskname, completed FROM todo WHERE completed = false')
+        .then((data) => {
+
+            let incompleteArray = []
+            for(task of data) {
+                incompleteArray.push(task.taskname)
+            }
+            
+            res.render('update-todos', {incomplete: incompleteArray})
+        })
+    } catch(err) {
+        console.log(err)
+    }
+    })
 //delete
 app.get('/delete-todos',(req,res) => {
     res.render('delete-todos')
