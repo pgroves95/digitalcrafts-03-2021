@@ -40,14 +40,33 @@ app.post('/create-todo', (req,res) => {
     const { taskname } = req.body
     try {
         db.none('INSERT INTO todo (taskname,completed) VALUES($1,$2)', [taskname, 'false'])
-        res.render('read-todos')
+        res.redirect('read-todos')
     } catch(err) {
         console.log(err)
     }
 })
 //read
 app.get('/read-todos',(req,res) => {
-    res.render('read-todos')
+    try {
+        db.any('SELECT taskname, completed FROM todo')
+        .then((data) => {
+            let incompleteArray = []
+            let completedArray = []
+
+            for(task of data) {
+                if(task.completed === false) {
+                    incompleteArray.push(task.taskname)
+                } else {
+                    completedArray.push(task.taskname)
+                }
+            }
+            console.log(incompleteArray)
+            console.log(completedArray)
+            res.render('read-todos', {incomplete: incompleteArray, complete: completedArray})
+        })
+    } catch(err) {
+        console.log(err)
+    }
 })
 //update
 app.get('/update-todos',(req,res) => {

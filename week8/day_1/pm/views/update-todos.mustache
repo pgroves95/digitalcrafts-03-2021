@@ -5,9 +5,16 @@
     <title>Complete/Modify To-Do's</title>
 </head>
 <body>
-    <h2>COMPLETE/MODIFY TO-DO'S</h2>
+<div class="container">
+    <h2>COMPLETE TO-DO'S</h2>
     {{> nav}}
-
+     <ul class="list-group">
+        <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="">
+            {{task}}
+        </li>
+    </ul>
     {{> script}}
+    </div>
 </body>
 </html>

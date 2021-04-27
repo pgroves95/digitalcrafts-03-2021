@@ -5,9 +5,27 @@
     <title>See all To-Do's</title>
 </head>
 <body>
-    <h2>SEE ALL TO-DO'S</h2>
+<div class="container">
+    <h2 class="header">SEE ALL TO-DO'S</h2>
     {{> nav}}
-
+     <h3>Unfinished Business</h3>
+    {{#incomplete}}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>Task Name</strong>: {{.}}
+        </li>
+    </ul>
+    {{/incomplete}}
+    <h3>Taken Care Of</h3>
+    {{#complete}}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong>Task Name</strong>: {{.}}
+        </li>
+    </ul>
+    {{/complete}}
     {{> script}}
+    </div>
+
 </body>
 </html>
