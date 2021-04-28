@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
+app.use(express.json())
 
 const Sequelize = require('sequelize');
 const { User } = require('./models');
@@ -26,12 +27,6 @@ app.get('/users', async (req, res) => {
     res.json(users);
 });
 
-app.get('/users/:id', async (req, res) => {
-    const oneUser = await User.findByPk(req.params.id);
-    res.json(oneUser);
-});
-
-
 
 app.get('/users/:id', async (req, res) => {
     try{
@@ -54,19 +49,19 @@ app.post('/users/search', async (req, res) => {
     res.json(users);
 });
 
-app.post('/users/search', async (req, res) => {
-    const users = await User.findAll({
-        where: {
-            [Sequelize.Op.or]: [
-                { 
-                    firstName: req.body.term,
-                    lastName: req.body.term
-                }
-            ]
-        }
-    });
-    res.json(users);
-});
+// app.post('/users/search', async (req, res) => {
+//     const users = await User.findAll({
+//         where: {
+//             [Sequelize.Op.or]: [
+//                 { 
+//                     firstName: req.body.term,
+//                     lastName: req.body.term
+//                 }
+//             ]
+//         }
+//     });
+//     res.json(users);
+// });
 
 
 app.post('/users/:id', async (req, res) => {
