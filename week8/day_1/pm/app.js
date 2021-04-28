@@ -31,14 +31,14 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 //psql dynamic list interpolate function
-// const pgListInterpolater = (list) =>{
-//     let pgString = ''
-//     for(i=1; i<list.length; i++){
-//         pgString += `$${i},`
-//     }
-//     noTrail = pgString.slice(0,(pgString.length-1))
-//     return noTrail
-// }
+const pgListInterpolater = (list) =>{
+    let pgString = ''
+    for(i=1; i<list.length; i++){
+        pgString += `$${i},`
+    }
+    noTrail = pgString.slice(0,(pgString.length-1))
+    return noTrail
+}
 
 //create
 app.get('/create-todo',(req,res) => {
@@ -97,8 +97,12 @@ app.get('/update-todos',(req,res) => {
     })
 
 app.post('/update-todos', (req,res) => {
-    const { task } = req.body
-    console.log(task)
+    console.log(req.body.task)
+    updateList = []
+    for(item of req.body.task){
+        updateList.push(item)
+    }
+    console.log(updateList)
     try{
         db.any('SELECT * FROM todo')
         .then((data) =>{
