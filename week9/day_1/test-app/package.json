@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.38.2"
   }
 }
