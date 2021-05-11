@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Garage from './Garage'
+import MotoAm from './Motorcyles-american'
 
-export default class Motorcyles extends Garage {
+export default class Motorcyles extends Component {
     render() {
         return (
             <div>
-                
+            {this.props.vehicleName}
+                <MotoAm/>
             </div>
         )
     }

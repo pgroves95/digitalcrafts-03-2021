@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ExoticCars from './Exotic-cars'
+import Motorcyles from './Motorcyles'
 
 export default class Garage extends Component {
 
@@ -38,10 +38,13 @@ export default class Garage extends Component {
     }
 
     render(){
+        
         return(
-            <ExoticCars
-                
-            />
+            <div>
+                <Motorcyles 
+                    vehicleName={this.state.vehicles.motorcycle.foreign[0].name}
+                />
+            </div>
         )
     }
 }
