@@ -1,12 +1,15 @@
-
 import './App.css';
+import House from './House.js'
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-  
-    </div>
-  );
+export default class App extends Component {
+
+
+  render() {
+    return (
+      <div>
+        <House />
+      </div>
+    )
+  }
 }
-
-export default App;
