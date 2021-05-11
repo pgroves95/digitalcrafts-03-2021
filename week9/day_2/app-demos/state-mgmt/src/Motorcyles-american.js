@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import Motorcycles from './Motorcyles'
 
-export default class Motorcyles-american extends Component {
+export default class MotoAm extends Component {
     render() {
         return (
             <div>
-                
+                {this.props.vehicleName}
             </div>
         )
     }
