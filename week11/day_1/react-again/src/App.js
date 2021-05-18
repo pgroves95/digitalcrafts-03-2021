@@ -1,15 +1,12 @@
-import Nav from './components/nav';
-import Search from './components/search';
-import Footer from './components/footer';
+
+import CardContainer from './components/card';
 import './App.css';
 
 //google hompage with header/nav, search bar, footer
 function App() {
   return (
     <div className="App">
-       <Nav />
-       <Search />
-       <Footer />
+       <CardContainer />
     </div>
   );
 }
