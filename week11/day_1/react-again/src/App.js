@@ -1,14 +1,15 @@
+import Nav from './components/nav';
+import Search from './components/search';
+import Footer from './components/footer';
 import './App.css';
 
+//google hompage with header/nav, search bar, footer
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          Learn React
-      </header>
+       <Nav />
+       <Search />
+       <Footer />
     </div>
   );
 }
