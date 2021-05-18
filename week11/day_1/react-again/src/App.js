@@ -1,12 +1,13 @@
+import "./App.css";
+import CardContainer from "./components/CardContainer.jsx";
+import { data } from "./data/data";
 
-import CardContainer from './components/card';
-import './App.css';
 
-//google hompage with header/nav, search bar, footer
 function App() {
   return (
     <div className="App">
-       <CardContainer />
+      <h1>Pokemon Search Page</h1>
+      <CardContainer pokemonData={data} />
     </div>
   );
 }
