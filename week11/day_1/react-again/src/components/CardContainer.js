@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useDebugValue } from 'react';
 import Card from "./Card"
 import "./cardContainer.css"
 
 class CardContainer extends Component {
     state = {
         searchCriteria: "",
+        PokemonName: "",
+        PokemonHP: "",
         pokemonBerries: []
     }
 
@@ -26,9 +28,41 @@ class CardContainer extends Component {
            this.setState({
                searchCriteria:search
            })
-
        
    }
+
+   handleChange = (event) => {
+       const {value} = event.target
+       if(event.target.className === "create-name") {
+            this.setState({
+                PokemonName:value
+            })
+        }
+
+        if(event.target.className === "create-hp") {
+            this.setState({
+                PokemonHP:value
+            })
+        }
+   }
+
+   createNewPokemon = (event) => {
+
+    const newPokemon =   {
+        id: null,
+        name: this.state.PokemonName,
+        hp: this.state.PokemonHP,
+        sprites: {
+          front:
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+        }
+      }
+      console.log(newPokemon)
+      this.props.pokemonData.unshift(newPokemon)
+   }
+
+   
 
     render() {
         
@@ -44,13 +78,17 @@ class CardContainer extends Component {
 
                 </div>
                 {/* form */}
+                <form onSubmit={(e)=>this.createNewPokemon(e)}>
+                <h2>Add a Pokemon</h2>
                 <div>
-                 <input className="create-field"type="text" placeholder="Enter a Name"/>
-                 <input className="create-field" type="text" placeholder="Enter a HP"/>
-                 <input className="create-field" type="text" placeholder="Enter front URL"/>
-                 <input className="create-field" type="text" placeholder="Enter back URL"/>
-                <button className="create-button">Create</button>
+                 <input value={this.state.PokemonName} onChange={(e)=>this.handleChange(e)} className="create-name" type="text" placeholder="Enter a Name"/>
+                 <input value={this.state.PokemonHP} onChange={(e)=>this.handleChange(e)} className="create-hp" type="text" placeholder="Enter a HP"/>
+                 {/* <input className="create-field" type="text" placeholder="Enter front URL"/>
+                 <input className="create-field" type="text" placeholder="Enter back URL"/> */}
+                <button type="submit" className="create-button">Create</button>
                 </div>
+                </form>
+                
                 <div className="card-container">
 
                 {filteredData.map((singlePokemon,index) => <Card key={singlePokemon.name}  pokemon={singlePokemon}  />
