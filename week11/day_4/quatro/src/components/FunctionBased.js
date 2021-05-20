@@ -6,6 +6,7 @@ export default function FunctionBased({input, setInput, sendDataReset}) {
         <div className="fb-main-container">
             <h1 className="fb-h1">Create Account</h1>
             <input className="form-input"
+            value={input.firstName}
             onChange={(e)=> {
                 const val = e.target.value;
                 setInput(oldState => {
@@ -17,6 +18,7 @@ export default function FunctionBased({input, setInput, sendDataReset}) {
             />
             <input
             className="form-input"
+            value={input.lastName}
             onChange={(e)=> {
                 const val = e.target.value;
                 setInput(oldState => {
@@ -28,6 +30,7 @@ export default function FunctionBased({input, setInput, sendDataReset}) {
             />
             <input
             className="form-input"
+            value={input.email}
             onChange={(e)=> {
                 const val = e.target.value;
                 setInput(oldState => {
@@ -39,6 +42,7 @@ export default function FunctionBased({input, setInput, sendDataReset}) {
             />
             <input
             className="form-input"
+            value={input.password}
             onChange={(e)=> {
                 const val = e.target.value;
                 setInput(oldState => {
