@@ -1,7 +1,7 @@
 import './FunctionBased.css'
 import {SignUpButton} from './styleComponents/SignUpFormStyle'
 
-export default function FunctionBased({input, setInput, userInfo, sendDataReset}) {
+export default function FunctionBased({input, setInput, sendDataReset}) {
     return (
         <div className="fb-main-container">
             <h1 className="fb-h1">Create Account</h1>
@@ -50,7 +50,6 @@ export default function FunctionBased({input, setInput, userInfo, sendDataReset}
             />
             <SignUpButton onClick={()=>{
                 sendDataReset(input)
-                setInput(userInfo)
                 }}>Sign Up
             </SignUpButton>
         </div>

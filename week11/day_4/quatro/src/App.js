@@ -18,10 +18,12 @@ function App() {
 
   const sendDataReset = (input) => {
     setNewData(input)
+    setInput(userInfo)
+    console.log(input)
   }
   return (
     <div className="App">
-    <FunctionBased input={input} setInput={setInput} userInfo={userInfo} sendDataReset={sendDataReset}/> 
+    <FunctionBased input={input} setInput={setInput} sendDataReset={sendDataReset}/> 
     <UserDetail newData={newData}/>
     </div>
   );
