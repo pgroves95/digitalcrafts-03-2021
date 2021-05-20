@@ -1,0 +1,21 @@
+.fb-main-container {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #cc3;
+}
+
+.fb-h1 {
+  padding: 1rem 5rem;
+}
+
+.form-input {
+  width: 10rem;
+  height: 1.3rem;
+  border-radius: 15px;
+  margin: 0.3rem;
+  padding: 0.2rem;
+}
