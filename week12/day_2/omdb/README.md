@@ -1,1 +1,1 @@
-#Movie search app using OMDb and react
+# Movie search app using OMDb and react
