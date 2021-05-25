@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
 import MoviesContainer from './components/MoviesContainer'
+import ResultCount from './components/ResultCount'
 
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
     <div className="App">
       <h1>OMDB Movie Search</h1>
       <input type="text" className="searchInput" onChange={(e)=>handleInput(e)}value={searchInput} placeholder="Search for a Movie" />
+      <br/>
       <button onClick={() => fetchMovies(searchInput)}>Find Movie</button>
+      <ResultCount size={movieResults.length} />
       <MoviesContainer movieResults={movieResults} />
     </div>
   );

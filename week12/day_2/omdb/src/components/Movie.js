@@ -1,12 +1,14 @@
 import React from 'react'
+import '../App.css';
 
 export default function Movie(props) {
-
+    const {Title, Year, Poster} = props.movie
 
     return (
-        <div>
-            <h2>{props.title}</h2>
-            <h3>{props.year}</h3>
+        <div className="Movie">
+            <h3>{Title}</h3>
+            <img src={Poster} alt="movie poster"/>
+            <h4>{Year}</h4>
         </div>
     )
 }

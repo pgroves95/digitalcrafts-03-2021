@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import '../App.css';
 import Movie from './Movie'
 
 export default function MoviesContainer(props) {
     const { movieResults } = props
 
     useEffect(() => {
-        
+        return
     }, [props])
     
     return (
-        <div className="wrapper">
+        <div className="moviesContainer">
             {movieResults.map((movie) => {
-                return <Movie title={movie.Title} year={movie.Year} />
+                return <Movie movie={movie} key={movie.imdbID} />
             })}
         </div>
     )
