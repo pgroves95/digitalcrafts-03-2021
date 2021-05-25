@@ -3,7 +3,7 @@ import '../App.css';
 
 export default function Movie(props) {
     const {Title, Year, Poster} = props.movie
-
+    console.log(props.key)
     return (
         <div className="Movie">
             <h3>{Title}</h3>

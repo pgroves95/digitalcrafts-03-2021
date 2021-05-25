@@ -28,7 +28,13 @@ button {
 }
 
 .Movie {
-  background-color: #65c;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    122deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(93, 33, 179, 0.8365) 45%,
+    rgb(50, 160, 182) 70%
+  );
   width: 18rem;
   margin: 1.8rem 0.5rem;
   padding: 0rem 0.5rem;
