@@ -1,3 +1,5 @@
+import { ADD, SUBTRACT } from '../actions/actionTypes'
+
 const initialState = {
     counter: 0,
     userName: ""
@@ -5,9 +7,9 @@ const initialState = {
 
 function rootReducer(state = initialState,action){
     switch(action.type){
-        case "ADD":
+        case ADD:
             return { ...state, counter: state.counter + 1 }
-        case "SUBTRACT":
+        case SUBTRACT:
             return { ...state, counter: state.counter -1 }
         default:
             return state
